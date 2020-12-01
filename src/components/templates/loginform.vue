@@ -2,15 +2,12 @@
   <div class="bg-berry m-2 z-depth-1 rounded-lg grid grid-cols-1 sm:grid-cols-2">
     <div class="hidden sm:block"></div>
     <div class="bg-white" style="border-radius: 0 .5rem .5rem 0">
-      <form class="px-1" name="login-form" ref="form" @submit.prevent="showFormData()">
+      <form class="px-1" ref="form" @submit.prevent="showFormData(formData)">
       <h3 class="text-center text-berry text-lg my-1 text-center font-bold capitalize">
         {{title}}
       </h3>
         <div class="py-1">
-          <input type="text" name="username" placeholder="Name or Email"/>
-        </div>
-        <div class="py-1">
-          <input name="password" type="password" placeholder="Password" />
+          <input name="password" type="password" v-model="formData.password" placeholder="Password" />
         </div>
         <div>
           <a class="cursor-pointer text-red-500 my-1 text-center flex justify-center capitalize underline">
@@ -29,19 +26,20 @@
 export default {
   data: () => {
     return {
-      title: 'Please login'
+      title: 'Please login',
+      formData: {
+        username: '',
+        password: ''
+      }
     }
   },
   methods: {
-    showFormData: () => {
-      let loginForm = document.forms['login-form']
-      const username = loginForm['username'].value
-      const password = loginForm['password'].value
-      const loginObj = {
-        username: username,
-        password: atob(password)
+    showFormData: function (obj) {
+      const formObj = {
+        username: this.$refs.form.username.value,
+        password: atob(this.$refs.form.password.value)
       }
-      console.log(loginObj, this.$refs)
+      console.log(formObj)
     }
   }
 }
@@ -57,6 +55,6 @@ export default {
   input[type=text]:focus, input[type=password]:focus{
     border: 0;
     outline: 0;
-    border-bottom: 2px solid #3f681c;
+    border-bottom: 2px solid #56961f;
   }
 </style>

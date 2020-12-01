@@ -11,6 +11,7 @@
   "users": [
     {
       "name": "test-name",
+      "username": "test-username",
       "email": "test-email",
       "id": 1,
       "phoneNumber": 23408058637720,
