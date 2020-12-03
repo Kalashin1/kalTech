@@ -13,9 +13,6 @@
         <div class="py-1" slot="third">
           <input type="password" ref="password" placeholder="Password"/>
         </div>
-        <div class="py-1" slot="fourth">
-          <input type="text" ref="username" placeholder="Username"/>
-        </div>
         <div class="py-1" slot="fifth">
           <input type="number" ref="number" placeholder="phoneNumber"/>
         </div>
@@ -23,7 +20,7 @@
           <input type="text" ref="address" placeholder="Address"/>
         </div>
         <div class="py-1 flex justify-center items-center" slot="submit" ref="submit">
-          <input type="submit" value="Signup" class="cursor-pointer px-2 py-1 font-bold capitalize text-center bg-berry text-white shadow-md rounded-lg" />
+          <input type="submit" @click.prevent="showRefs()" value="Signup" class="cursor-pointer px-2 py-1 font-bold capitalize text-center bg-berry text-white shadow-md rounded-lg" />
         </div>
       </app-signup-form>
     </div>
@@ -35,7 +32,8 @@
 import Navbar from '../templates/navbar'
 import Footer from '../templates/footer'
 import Banner from '../templates/banner'
-import signupform from '../templates/signupform'
+import signupform from '../templates/form'
+import { HttpModule } from '../../../modules/http-module.js'
 // queen of doings
 
 export default {
@@ -45,9 +43,31 @@ export default {
     'app-banner': Banner,
     'app-signup-form': signupform
   },
-  data: () => {
+  data: function () {
     return {
-      bannerText: 'Signup'
+      bannerText: 'Signup',
+      valid: false,
+      http: new HttpModule()
+    }
+  },
+  methods: {
+    showRefs: function () {
+      var signupForm = {
+        name: this.$refs.name.value,
+        password: this.$refs.password.value,
+        email: this.$refs.email.value,
+        address: this.$refs.address.value,
+        number: this.$refs.number.value,
+        cart: [],
+        orders: [],
+        id: Math.floor(Math.random() * 10000000)
+      }
+      console.log(signupForm)
+      this.http.post('http://localhost:3000/users', signupForm).then(res => {
+        console.log(res)
+      }).catch(err => {
+        console.log(err)
+      })
     }
   }
 }

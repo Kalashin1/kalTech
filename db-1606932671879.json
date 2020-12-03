@@ -17,14 +17,6 @@
       "address": "No test adress, street",
       "orders": [],
       "cart": []
-    },
-    {
-      "name": "Kinanee Samson",
-      "password": "test1234",
-      "email": "kinaneesamsonjohn@gmail.com",
-      "address": "No 19 Mike Amadi Street, Rukpokwu",
-      "number": "08058637720",
-      "id": 2
     }
   ]
 }

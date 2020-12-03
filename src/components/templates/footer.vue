@@ -2,7 +2,7 @@
     <div class="bg-berry pX-2">
         <div class="grid grid-cols-1 sm:grid-cols-5">
             <div v-for="footerLink in footerLinks" :key="footerLink.title">
-                <h3 class="text-lg text-center sm:text-left capitalize my-1 text-xl text-white font-bold">
+                <h3 class="text-lg hidden sm:block text-center sm:text-left capitalize my-1 text-xl text-white font-bold">
                   {{footerLink.title}}
                 </h3>
                 <ul>
@@ -13,14 +13,14 @@
                     </li>
                 </ul>
             </div>
-            <div class="sm:col-span-2 hidden sm:block">
-                <h3 class="text-center sm:text-left capitalize my-1 text-xl text-white font-bold">
+            <div class="sm:col-span-2">
+                <h3 class="text-center hidden sm:block sm:text-left capitalize my-1 text-xl text-white font-bold">
                   {{footerInfoTitle}}
                 </h3>
-                <p class="text-white text-md">
+                <p class="text-white hidden sm:block text-md">
                   {{footerInfoText}}
                 </p>
-                <ul class="flex flex-row mt-2 items-center">
+                <ul class="flex flex-row mt-2 mb-0 items-center">
                   <li class="mx-0">
                     <a href="">
                       <svg xmlns="http://www.w3.org/2000/svg" class="w-0" fill="#fff" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>

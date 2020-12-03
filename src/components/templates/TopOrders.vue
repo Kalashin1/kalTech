@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bg-white">
       <h4 class="text-2xl sm:text-2xl text-red-600 my-1 font-bold text-center">{{title}}</h4>
       <div class="grid my-2 grid-cols-1 sm:grid-cols-4">
           <div class="flex flex-col mx-0 my-0" v-for="orders in topOrders" :key="orders.id">
