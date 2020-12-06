@@ -3,12 +3,12 @@
     <app-navbar></app-navbar>
     <div class="container flex justify-center items-center">
       <div class="grid grid-cols-1 sm:grid-cols-2">
-        <div>
+        <div class="hidden sm:block">
          <a class="w-3/5 sm:w-2/4 h-2/5 my-2 flex justify-center rounded-md shadow-lg uppercase font-bold bg-berry cursor-pointer text-center text-white py-1 hover:bg-red-500 px-2" v-for="meal in meals" :key="meal">
             {{meal}}
           </a>
         </div>
-        <div class="flex justify-center flex-col items-center">
+        <div class="flex justify-center mt-10 sm:mt-0 flex-col items-center">
           <h3 class="sm:text-2xl text-xl font-bold text-white cursor-pointer text-center">
             {{text}}
           </h3>
@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 #header{
-  background: url(../../assets/images/blur-breakfast-chef-cooking-262978.jpg);
+  background: url(../../../assets/images/blur-breakfast-chef-cooking-262978.jpg);
   background-repeat: no-repeat;
 }
 

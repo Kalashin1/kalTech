@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white">
-    <h4 class="text-2xl sm:text-2xl text-red-500 my-1 font-bold text-center">{{title}}</h4>
+    <h4 class="text-2xl sm:text-2xl text-gray-500 my-1 font-bold text-center">{{title}}</h4>
     <div class="grid grid-cols-1 sm:grid-cols-2 px-0 py-0">
       <div class="mx-0 shadow-lg mb-2" v-for="promo in promos" v-bind:key="promo.id">
         <div class="relative">

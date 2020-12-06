@@ -11,6 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "mysql": "^2.18.1",
     "rxjs": "^6.6.3",
     "tailwindcss": "^2.0.1",
     "vue": "^2.5.2",

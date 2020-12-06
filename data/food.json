@@ -1,0 +1,16 @@
+{
+  "foods": [
+    {
+      "foodName": "Lasagna",
+      "imgUrl": "~/assets/images/65c37a4f9918aa7847d71f470829b981.jpg",
+      "id": 2,
+      "price": 102
+    },
+    {
+      "foodName": "Scottish Meal",
+      "imgUrl": "~assets/images/4892e8a244a932e86c04c93bdd6d6c8a.jpg",
+      "id": 3,
+      "price": 135
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-header></app-header>
+    <app-navbar class="bg-berry"></app-navbar>
     <app-contact-form>
       <div class="py-2" slot="first">
         <input type="text" ref="name" placeholder="Name"/>
@@ -23,19 +23,18 @@
 </template>
 
 <script>
-import Header from '../templates/header'
+import Navbar from '../templates/navbar'
 import Form from '../templates/form'
 import Footer from '../templates/footer'
 
 export default {
   components: {
-    'app-header': Header,
+    'app-navbar': Navbar,
     'app-footer': Footer,
     'app-contact-form': Form
   }
 }
 </script>
-
 <style scoped>
 
 </style>

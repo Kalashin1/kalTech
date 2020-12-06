@@ -1,6 +1,6 @@
 <template>
-    <div class="bg-berry pX-2">
-        <div class="grid grid-cols-1 sm:grid-cols-5">
+    <div class="bg-berry">
+        <div class="grid px-1 grid-cols-1 sm:grid-cols-5">
             <div v-for="footerLink in footerLinks" :key="footerLink.title">
                 <h3 class="text-lg hidden sm:block text-center sm:text-left capitalize my-1 text-xl text-white font-bold">
                   {{footerLink.title}}

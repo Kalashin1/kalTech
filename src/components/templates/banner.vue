@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
   #banner{
-    background: url(../../assets/images/bg-img2.jpg);
+    background: url(../../../assets/images/bg-img2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
