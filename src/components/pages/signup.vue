@@ -1,7 +1,5 @@
 <template>
   <div>
-    <app-navbar class="bg-berry"></app-navbar>
-    <app-banner :bannerText="bannerText"></app-banner>
     <div>
       <app-signup-form>
         <div class="py-1" slot="first">
@@ -24,23 +22,16 @@
         </div>
       </app-signup-form>
     </div>
-    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import Navbar from '../templates/navbar'
-import Footer from '../templates/footer'
-import Banner from '../templates/banner'
 import signupform from '../templates/form'
 import { HttpModule } from '../../../modules/http-module.js'
 // queen of doings
 
 export default {
   components: {
-    'app-navbar': Navbar,
-    'app-footer': Footer,
-    'app-banner': Banner,
     'app-signup-form': signupform
   },
   data: function () {

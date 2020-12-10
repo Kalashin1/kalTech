@@ -8,7 +8,7 @@
             <h3 id="food-name" class="cursor-pointer py-0 my-0 text-white bg-berry block w-full text-center absolute font-bold text-xl sm:text-2xl">
             {{ promo.foodName }}
             </h3>
-            <div class="border-2 circle-price border-white absolute text-lg text-white hover:bg-red-500 bg-berry items-center font-bold rounded-full w-4 h-4 flex flex-col justify-center">
+            <div class="border-2 circle-price border-white absolute text-lg text-white hover:bg-red-500 bg-berry items-center cursor-pointer font-bold rounded-full w-4 h-4 flex flex-col justify-center">
               -30%
               <div class="text-md">
                  $ {{promo.price}}

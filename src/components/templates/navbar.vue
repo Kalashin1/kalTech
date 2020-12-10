@@ -27,8 +27,7 @@ export default {
         'Order',
         'Contact',
         'About',
-        'Login',
-        'Signup'
+        'Register'
       ]
     }
   },

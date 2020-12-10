@@ -5,19 +5,19 @@
                 <h3 class="text-lg hidden sm:block text-center sm:text-left capitalize my-1 text-xl text-white font-bold">
                   {{footerLink.title}}
                 </h3>
-                <ul>
+                <ul class="flex flex-row sm:flex-col">
                     <li v-for="link in footerLink.links" :key="link">
-                        <a class="text-white my-0 block px-1 text-center sm:text-left py-0 hover:bg-gray-500 font-bold text-md capitalize cursor-pointer">
+                        <a class="text-white  my-0 block px-1 text-center sm:text-left py-0 hover:bg-gray-500 font-bold text-md capitalize cursor-pointer">
                             {{link}}
                         </a>
                     </li>
                 </ul>
             </div>
             <div class="sm:col-span-2">
-                <h3 class="text-center hidden sm:block sm:text-left capitalize my-1 text-xl text-white font-bold">
+                <h3 class="text-center sm:block sm:text-left capitalize my-1 text-xl text-white font-bold">
                   {{footerInfoTitle}}
                 </h3>
-                <p class="text-white hidden sm:block text-md">
+                <p class="text-white sm:block text-md">
                   {{footerInfoText}}
                 </p>
                 <ul class="flex flex-row mt-2 mb-0 items-center">

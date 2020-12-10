@@ -13,13 +13,13 @@ export class HttpModule {
     })
   }
 
-  get (url, obj ={}, headers) {
+  get (url, obj ={}, headers = {}) {
     return new Promise((resolve, reject)=>{
       const XHR = new XMLHttpRequest()
       XHR.open("GET", url);
       if(typeof headers !== 'undefined'){
         for(var key in headers){
-          XHR.setRequestHeaders(key, headers[key])
+          XHR.setRequestHeader(key, headers[key])
         }
       }
       if(typeof obj !== 'undefined'){
@@ -38,7 +38,7 @@ export class HttpModule {
       XHR.open("POST", url);
       if(typeof headers !== 'undefined'){
         for(var key in headers){
-          XHR.setRequestHeaders(key, headers[key])
+          XHR.setRequestHeader(key, headers[key])
         }
       }
       XHR.send(obj)

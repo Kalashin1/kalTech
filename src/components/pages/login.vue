@@ -1,7 +1,5 @@
 <template>
   <div>
-    <app-navbar class="bg-berry"></app-navbar>
-    <app-banner :bannerText="bannerText"></app-banner>
     <app-login-form>
       <div class="py-2" slot="first">
         <input type="text" ref="name" placeholder="Name or Email"/>
@@ -13,22 +11,15 @@
         <input type="submit" value="Login" class="cursor-pointer px-2 py-1 font-bold capitalize text-center bg-berry text-white shadow-md rounded-lg" />
       </div>
     </app-login-form>
-    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import Navbar from '../templates/navbar'
-import Footer from '../templates/footer'
-import Banner from '../templates/banner'
 import Loginform from '../templates/form'
 import { HttpModule } from '../../../modules/http-module.js'
 
 export default {
   components: {
-    'app-navbar': Navbar,
-    'app-footer': Footer,
-    'app-banner': Banner,
     'app-login-form': Loginform
   },
   data: function () {

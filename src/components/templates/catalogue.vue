@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-gray-500">
-    <div class="text-white uppercase font-bold text-xl pt-2 ml-2">{{title}}</div>
-    <div class="grid grid-cols-1 cursor-pointer sm:grid-cols-3 bg-gray-500  my-1 p-1">
-      <div v-for="food in foods" :key="food.id" class="m-0 rounded-lg z-depth-2 grid grid-cols-1 bg-white text-white font-bold p-1">
+  <div :class="background">
+    <div :class="titleColor" class="uppercase font-bold text-xl pt-2 ml-2">{{title}}</div>
+    <div class="grid grid-cols-1 cursor-pointer sm:grid-cols-3 my-1 p-1">
+      <div v-for="food in foods" :key="food.id" :class="cardBackground" class="m-0 rounded-lg z-depth-2 grid grid-cols-1 text-white font-bold p-1">
         <h3 class="text-gray-500 font-bold text-lg block my-0">{{food.foodName}}</h3>
         <div class="divide-berry divide-x-2 block divide-x-solid"></div>
         <div class="">
@@ -20,10 +20,9 @@
 
 <script>
 export default {
-  props: ['foods'],
+  props: ['foods', 'background', 'cardBackground', 'title', 'titleColor'],
   data: function () {
     return {
-      title: 'Our Meals'
     }
   }
 }
