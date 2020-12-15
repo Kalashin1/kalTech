@@ -15,7 +15,7 @@
               </div>
             </div>
           </div>
-          <img class="w-full h-12 sm:h-16 object-cover" :src="promo.imgUrl" />
+          <img class="w-full h-12 sm:h-16 object-cover" :src="require(`../../../assets/images/${promo.imgUrl}`)" />
         </div>
       </div>
     </div>
