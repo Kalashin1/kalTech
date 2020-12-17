@@ -3,7 +3,7 @@
     <div :class="titleColor" class="uppercase font-bold text-xl pt-2 ml-2">{{title}}</div>
     <div class="grid grid-cols-1 cursor-pointer sm:grid-cols-3 my-1 p-1">
       <div v-for="food in foods" :key="food.imgUrl" :class="cardBackground" class="m-0 rounded-lg z-depth-2 grid grid-cols-1 text-white font-bold p-1">
-        <h3 class="text-gray-500 font-bold text-lg block my-0">{{food.foodName}}</h3>
+        <h3 :class="nameColor" class="font-bold uppercase text-lg block my-0">{{food.foodName}}</h3>
         <div class="divide-berry divide-x-2 block divide-x-solid"></div>
         <div class="">
           <img :src="require(`../../../assets/images/${food.imgUrl}`)" class="w-full h-12 object-cover object-center">
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  props: ['foods', 'background', 'cardBackground', 'title', 'titleColor'],
+  props: ['foods', 'background', 'cardBackground', 'title', 'titleColor', 'nameColor'],
   data: function () {
     return {
     }

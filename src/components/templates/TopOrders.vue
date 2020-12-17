@@ -4,7 +4,7 @@
       <div class="grid my-2 grid-cols-1 sm:grid-cols-4">
           <div class="flex flex-col mx-0 my-0" v-for="orders in topOrders" :key="orders.id">
               <div class="flex flex-col">
-                  <img :src="orders.imgUrl" class="w-full h-8 sm:h-10 object-cover" />
+                  <img :src="require(`../../../assets/images/${orders.imgUrl}`)" class="w-full h-8 sm:h-10 object-cover" />
                   <div class="flex justify-center items-center"></div>
               </div>
               <div class="flex flex-col">
@@ -25,39 +25,10 @@
 
 <script>
 export default {
-  data: () => {
+  props: ['topOrders'],
+  data: function () {
     return {
-      title: 'Checkout What Others Are Ordering',
-      topOrders: [
-        {
-          name: 'Burger Supreme',
-          price: 30,
-          imgUrl: require('../../../assets/images/f9866d1c4a882f24c80dde154662dcd0.jpg'),
-          noOfOrders: 208,
-          id: 1
-        },
-        {
-          name: 'Faggot Fab',
-          price: 30,
-          imgUrl: require('../../../assets/images/2015d7e805424daf94bc999c675e742d.jpg'),
-          noOfOrders: 238,
-          id: 2
-        },
-        {
-          name: 'Waffle Max',
-          price: 65,
-          imgUrl: require('../../../assets/images/waffles2.jpg'),
-          noOfOrders: 272,
-          id: 3
-        },
-        {
-          name: 'Eaton Moss',
-          price: 53,
-          imgUrl: require('../../../assets/images/92624f368b45cdee5cebedcb3e2d5d5a.jpg'),
-          noOfOrders: 284,
-          id: 4
-        }
-      ]
+      title: 'Checkout What Others Are Ordering'
     }
   }
 }

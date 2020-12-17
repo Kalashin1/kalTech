@@ -2,9 +2,9 @@
   <div>
     <app-header></app-header>
     <app-promo v-bind:title="promosTitle" v-bind:promos="promos"></app-promo>
-    <app-orders></app-orders>
+    <app-orders v-bind:topOrders="topOrders"></app-orders>
     <app-promo v-bind:title="breakfastTitle" v-bind:promos="breakfasts"></app-promo>
-    <app-catalogue :foods="catalogue" :background="catalogueBackground" :cardBackground="catalogueCardBackground" :title="catalogueText" :titleColor="titleColor"></app-catalogue>
+    <app-catalogue :foods="catalogue" :background="catalogueBackground" :cardBackground="catalogueCardBackground" :nameColor="nameColor" :title="catalogueText" :titleColor="titleColor"></app-catalogue>
     <app-footer></app-footer>
   </div>
 </template>
@@ -34,26 +34,9 @@ export default {
       catalogueCardBackground: 'bg-white',
       breakfastTitle: 'Breakfast Suggestions',
       promosTitle: 'Deals of the day',
-      promos: [
-        // {
-        //   foodName: 'Bangers Mash',
-        //   imgUrl: require('../../../assets/images/bangers_mash_slider.jpg'),
-        //   id: 1,
-        //   prompType: 'discount',
-        //   discountRate: 30,
-        //   discount: true,
-        //   price: 128
-        // },
-        // {
-        //   foodName: 'English Breakfast',
-        //   imgUrl: require('../../../assets/images/2363aa263116f988fedb0756923f9282.jpg'),
-        //   id: 2,
-        //   prompType: 'discount',
-        //   discountRate: 30,
-        //   discount: true,
-        //   price: 98
-        // }
-      ],
+      nameColor: 'text-gray-500',
+      topOrders: [],
+      promos: [],
       breakfasts: [],
       catalogue: []
     }
@@ -67,6 +50,9 @@ export default {
     })
     ajax.getJSON('http://localhost:3000/promos').subscribe(res => {
       this.promos = res
+    })
+    ajax.getJSON('http://localhost:3000/top-orders').subscribe(res => {
+      this.topOrders = res
     })
   }
 }

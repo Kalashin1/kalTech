@@ -1,13 +1,14 @@
 <template>
     <div class="bg-berry">
-        <div class="grid px-1 grid-cols-1 sm:grid-cols-5">
-            <div v-for="footerLink in footerLinks" :key="footerLink.title">
-                <h3 class="text-lg hidden sm:block text-center sm:text-left capitalize my-1 text-xl text-white font-bold">
+        <div class="container px-2">
+          <div class="grid px-1 grid-cols-1 sm:grid-cols-3 lg:grid-cols-5">
+            <div class="span-2 lg:span-1" v-for="footerLink in footerLinks" :key="footerLink.title">
+                <h3 class="text-md hidden sm:block text-center sm:text-left capitalize my-1 text-lg lg:text-xl text-white font-bold">
                   {{footerLink.title}}
                 </h3>
                 <ul class="flex flex-row sm:flex-col">
                     <li v-for="link in footerLink.links" :key="link">
-                        <a class="text-white  my-0 block px-1 text-center sm:text-left py-0 hover:bg-gray-500 font-bold text-md capitalize cursor-pointer">
+                        <a class="text-white  my-0 block px-1 text-center sm:text-left py-0 hover:bg-gray-500 font-bold text-sm capitalize cursor-pointer">
                             {{link}}
                         </a>
                     </li>
@@ -38,6 +39,7 @@
                     </li>
                 </ul>
             </div>
+        </div>
         </div>
         <footer class="footer text-center py-1 font-bold text-white">
           &copy; 2020 GOODY FOODS

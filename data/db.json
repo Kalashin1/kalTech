@@ -43,19 +43,34 @@
       "id": 2
     }
   ],
-  "orders": [
+  "top-orders": [
     {
-      "id": 9098,
-      "items": [
-        {
-          "foodName": "Bangers Mash",
-          "imgUrl": "../../assets/images/bangers_mash_slider.jpg",
-          "price": 128,
-          "id": 9080,
-          "amount": 2,
-          "total": 236
-        }
-      ]
+      "name": "Burger Supreme",
+      "price": 30,
+      "imgUrl": "f9866d1c4a882f24c80dde154662dcd0.jpg",
+      "noOfOrders": 208,
+      "id": 1
+    },
+    {
+      "name": "Faggot Fab",
+      "price": 30,
+      "imgUrl": "2015d7e805424daf94bc999c675e742d.jpg",
+      "noOfOrders": 238,
+      "id": 2
+    },
+    {
+      "name": "Waffle Max",
+      "price": 65,
+      "imgUrl": "waffles2.jpg",
+      "noOfOrders": 272,
+      "id": 3
+    },
+    {
+      "name": "Eaton Moss",
+      "price": 53,
+      "imgUrl": "92624f368b45cdee5cebedcb3e2d5d5a.jpg",
+      "noOfOrders": 284,
+      "id": 4
     }
   ],
   "promos": [
@@ -63,6 +78,7 @@
       "foodName": "Bangers Mash",
       "imgUrl": "bangers_mash_slider.jpg",
       "id": 1,
+      "type": "food",
       "prompType": "discount",
       "discountRate": 30,
       "discount": true,
@@ -72,6 +88,7 @@
       "foodName": "English Breakfast",
       "imgUrl": "2363aa263116f988fedb0756923f9282.jpg",
       "id": 2,
+      "type": "food",
       "prompType": "discount",
       "discountRate": 30,
       "discount": true,
@@ -80,63 +97,72 @@
   ],
   "catalogue": [
     {
-      "foodName": "Bangers Mash",
+      "foodName": "bangers mash",
       "imgUrl": "bangers_mash_slider.jpg",
       "id": 1,
+      "type": "food",
       "prompType": "discount",
       "discountRate": 30,
       "discount": true,
       "price": 128
     },
     {
-      "foodName": "English Breakfast",
+      "foodName": "english breakfast",
       "imgUrl": "2363aa263116f988fedb0756923f9282.jpg",
       "id": 2,
+      "type": "food",
       "prompType": "discount",
       "discountRate": 30,
       "discount": true,
       "price": 98
     },
     {
-      "foodName": "Lasagna",
+      "foodName": "lasagna",
       "imgUrl": "65c37a4f9918aa7847d71f470829b981.jpg",
       "id": 2,
+      "type": "snacks",
       "price": 102
     },
     {
-      "foodName": "Scottish Meal",
+      "foodName": "scottish meal",
       "imgUrl": "4892e8a244a932e86c04c93bdd6d6c8a.jpg",
       "id": 3,
+      "type": "food",
       "price": 135
     },
     {
-      "foodName": "Irish Breakfast",
+      "foodName": "irish breakfast",
       "imgUrl": "0069685a38008fcc695377c331dc0223.jpg",
       "id": 1,
+      "type": "food",
       "price": 122
     },
     {
-      "foodName": "Super Bowels",
+      "foodName": "super bowels",
       "imgUrl": "614665d7c0a8fbe3ae61f57f9e3e06e6.jpg",
       "id": 2,
+      "type": "snacks",
       "price": 111
     },
     {
-      "foodName": "Fish Chips",
+      "foodName": "fish chips",
       "imgUrl": "9e78a4740edd0a59485af5a946b3e49e.jpg",
       "id": 3,
+      "type": "snacks",
       "price": 83
     },
     {
-      "foodName":"Ninja Meal",
+      "foodName":"ninja meal",
       "imgUrl": "c6357c9c494881be19b8ce24eaba16cc.jpg",
       "id": 4,
+      "type": "vegies",
       "price": 93
     },
     {
-      "foodName": "Tilapia Chips",
+      "foodName": "tilapia chips",
       "imgUrl": "21f44684701310ef2b795d8cf920c88e.jpg",
       "id": 5,
+      "type": "vegies",
       "price": 72
     }
   ]

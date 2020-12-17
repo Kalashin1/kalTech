@@ -2,13 +2,13 @@
   <div class="h-screen background-cover background-center" id="header">
     <app-navbar></app-navbar>
     <div class="container flex justify-center items-center">
-      <div class="grid grid-cols-1 sm:grid-cols-2">
-        <div class="hidden sm:block">
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="hidden lg:block">
          <a class="w-3/5 sm:w-2/4 h-2/5 my-2 flex justify-center rounded-md shadow-lg uppercase font-bold bg-berry cursor-pointer text-center text-white py-1 hover:bg-red-500 px-2" v-for="meal in meals" :key="meal">
             {{meal}}
           </a>
         </div>
-        <div class="flex justify-center mt-10 sm:mt-0 flex-col items-center">
+        <div class="flex justify-center mt-10 md:mt-8 lg:mt-0 flex-col items-center">
           <h3 class="sm:text-2xl text-xl font-bold text-white cursor-pointer text-center">
             {{text}}
           </h3>
