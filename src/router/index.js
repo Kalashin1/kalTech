@@ -1,39 +1,30 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/pages/Home'
-import About from '@/components/pages/about'
-import Register from '@/components/pages/register'
-import Contact from '@/components/pages/contact'
-import Menu from '@/components/pages/menu'
+import Home from '@/pages/Home'
+import Signup from '@/pages/Signup'
+import Login from '@/pages/Login'
+
+import '../../Langar-Regular.ttf'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
-      path: '/home',
+      path: '/',
       name: 'Home',
       component: Home
     },
     {
-      path: '/about',
-      name: 'About',
-      component: About
+      path: '/signup',
+      name: 'Signup',
+      component: Signup
     },
     {
-      path: '/register',
-      name: 'Auth',
-      component: Register
-    },
-    {
-      path: '/contact',
-      name: 'Contact',
-      component: Contact
-    },
-    {
-      path: '/menu',
-      name: 'Menu',
-      component: Menu
+      path: '/login',
+      name: 'login',
+      component: Login
     }
   ]
 })
