@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/pages/Home'
 import Signup from '@/pages/Signup'
 import Login from '@/pages/Login'
+import Blogs from '@/pages/Blogs'
 
 import '../../Langar-Regular.ttf'
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/blogs',
+      name: 'Blogs',
+      component: Blogs
     }
   ]
 })
