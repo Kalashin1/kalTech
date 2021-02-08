@@ -4,6 +4,7 @@ import Home from '@/pages/Home'
 import Signup from '@/pages/Signup'
 import Login from '@/pages/Login'
 import Blogs from '@/pages/Blogs'
+import Blog from '@/pages/Blog'
 
 import '../../Langar-Regular.ttf'
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/blogs',
       name: 'Blogs',
       component: Blogs
+    },
+    {
+      path: '/blog/:id',
+      name: 'Blog',
+      component: Blog
     }
   ]
 })

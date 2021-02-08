@@ -55,6 +55,10 @@ export default {
         this.$refs.nameError.textContent = data.name || ''
         this.$refs.emailError.textContent = data.email || ''
         this.$refs.passwordError.textContent = data.password || ''
+        //  eslint-disable-next-line
+      }
+      else {
+        this.$router.push('/blogs')
       }
     }
   }

@@ -1,10 +1,9 @@
 <template>
   <div class="container">
-    <div v-for="blog in blogs" :key="blog._id" class="blog-container" @click="getBlog(blog._id)">
-      <h4 class="blog-title"> {{ blog.title }} </h4>
-      <h5 class="blog-author">Written By {{ blog.author }}</h5>
-      <p class="blog-bday"> Posted on {{ blog.createdAt | filterDate }}</p>
-    </div>
+    <h4 class="blog-title">{{ blog.title}}</h4>
+    <h6 class="blog-author">written by {{ blog.author}}</h6>
+    <h6 class="blog-bday">on {{blog.createdAt | filterDate }}</h6>
+    <p class="blog-body"> {{blog.body}} </p>
   </div>
 </template>
 
@@ -12,9 +11,7 @@
 export default {
   data () {
     return {
-      userId: '',
-      blogs: [],
-      blogAuthor: ''
+      blog: {}
     }
   },
   filters: {
@@ -23,17 +20,17 @@ export default {
     }
   },
   methods: {
-    async getBlogs () {
-      const res = await fetch('http://localhost:3000/posts', {
-        credentials: 'include'
-      })
+    async getBlog (id) {
+      const res = await fetch(`http://localhost:3000/post/${id}`, { credentials: 'include' })
       if (res.ok) {
-        this.blogs = await res.json()
+        this.blog = await res.json()
       }
-    },
-    getBlog (id) {
-      this.$router.push(`/blog/${id}`)
     }
+  },
+  mounted () {
+    const { id } = this.$route.params
+    console.log(id)
+    this.getBlog(id)
   },
   beforeRouteEnter (to, from, next) {
     async function getUserId () {
@@ -52,15 +49,12 @@ export default {
       }
     }
     getUserId()
-  },
-  mounted () {
-    this.getBlogs()
   }
 }
 </script>
 
 <style scoped>
-.container{
+  .container{
   padding: 1rem .5rem;
   display: flex;
   flex-direction: column;
@@ -69,20 +63,13 @@ export default {
   align-content: center;
 }
 
-.blog-container{
-  background: #f2f2f2;
-  margin: .4rem 0;
-  padding: .5rem;
-  border-radius: .7rem;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
-}
-
-.blog-container .blog-title, .blog-container .blog-author, .blog-container .blog-bday{
+.blog-title, .blog-author, .blog-bday{
   text-transform: capitalize;
-  margin: .5rem .3rem
+  margin: .5rem .3rem;
+  text-align: center
 }
 
-.blog-container .blog-bday{
+.blog-bday{
   font-weight: lighter
 }
 
@@ -91,5 +78,15 @@ export default {
     margin: 1rem auto;
     width: 80vw;
   }
+}
+
+.blog-bday{
+  margin-bottom: 1rem
+}
+
+.blog-title{
+  text-align: center;
+  color: darkslategray;
+  font-size: 2rem
 }
 </style>
