@@ -2,8 +2,9 @@
   <div class="container">
     <div v-for="blog in blogs" :key="blog._id" class="blog-container" @click="getBlog(blog._id)">
       <h4 class="blog-title"> {{ blog.title }} </h4>
-      <h5 class="blog-author">Written By {{ blog.author }}</h5>
+      <h5 class="blog-author">Written By {{ blog.author.name }}</h5>
       <p class="blog-bday"> Posted on {{ blog.createdAt | filterDate }}</p>
+      <h6 class="blog-author">Email @ {{ blog.author.email}}</h6>
     </div>
   </div>
 </template>
@@ -29,6 +30,7 @@ export default {
       })
       if (res.ok) {
         this.blogs = await res.json()
+        this.blogs = this.blogs.reverse()
       }
     },
     getBlog (id) {
@@ -89,7 +91,7 @@ export default {
 @media screen and (min-width: 670px){
   .container{
     margin: 1rem auto;
-    width: 80vw;
+    width: 60vw;
   }
 }
 </style>

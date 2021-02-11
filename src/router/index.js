@@ -4,9 +4,8 @@ import Home from '@/pages/Home'
 import Signup from '@/pages/Signup'
 import Login from '@/pages/Login'
 import Blogs from '@/pages/Blogs'
+import AddBlog from '@/pages/AddBlog'
 import Blog from '@/pages/Blog'
-
-import '../../Langar-Regular.ttf'
 
 Vue.use(Router)
 
@@ -37,6 +36,11 @@ export default new Router({
       path: '/blog/:id',
       name: 'Blog',
       component: Blog
+    },
+    {
+      path: '/add-blog',
+      name: 'addBlog',
+      component: AddBlog
     }
   ]
 })

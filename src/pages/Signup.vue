@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Form @submit.prevent="handleSubmit($event)">
+    <Form>
       <div slot="title">
         <h2 class="title">Signup</h2>
       </div>

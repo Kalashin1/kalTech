@@ -1,7 +1,8 @@
 <template>
   <div class="container">
     <h4 class="blog-title">{{ blog.title}}</h4>
-    <h6 class="blog-author">written by {{ blog.author}}</h6>
+    <h6 class="blog-author">written by {{ blog.author.name}}</h6>
+    <h6 class="blog-author">Email @ {{ blog.author.email}}</h6>
     <h6 class="blog-bday">on {{blog.createdAt | filterDate }}</h6>
     <p class="blog-body"> {{blog.body}} </p>
   </div>
