@@ -10,7 +10,7 @@
 import Layout from '@/components/Layout'
 
 export default {
-  data: () => {
+  data () {
     return {
       name: 'kala'
     }

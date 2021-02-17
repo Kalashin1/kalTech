@@ -1,5 +1,6 @@
 <template>
   <div>
+    <PageTop></PageTop>
     <Navbar></Navbar>
     <slot></slot>
     <Footer></Footer>
@@ -9,11 +10,13 @@
 <script>
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import PageTop from '@/components/PageTop'
 
 export default {
   components: {
     'Navbar': Navbar,
-    'Footer': Footer
+    'Footer': Footer,
+    PageTop
   }
 }
 </script>

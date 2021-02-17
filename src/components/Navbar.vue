@@ -32,8 +32,9 @@ export default {
   display: grid;
   padding: 0;
   margin:0;
-  background: green;
-  color: #fff;
+  border-top: 1px solid #f4f4f4;
+  background: #fff;
+  color: green;
   font-weight: bold;
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
@@ -68,13 +69,13 @@ export default {
   padding: 22px 32px;
   text-decoration: none;
   cursor: pointer;
-  color: #fff;
+  color: green;
   text-transform: capitalize
 }
 
 .links li a:hover{
-  color: green;
-  background: #fff
+  color: #f2f2f2;
+  background: green
 }
 
 @media screen and (max-width: 670px){
