@@ -78,6 +78,9 @@ export default {
   .text{
     padding: .5rem 1rem
   }
+  .links{
+    grid-gap: 20%
+  }
   .links ul li a {
     text-decoration: none;
     text-transform: capitalize;

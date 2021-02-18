@@ -30,6 +30,7 @@ export default {
 <style scoped>
 .nav-wrapper{
   display: grid;
+  border-bottom: 1px solid #f4f4f4;
   padding: 0;
   margin:0;
   border-top: 1px solid #f4f4f4;
@@ -51,6 +52,7 @@ export default {
   display: grid;
   padding: 0 1rem;
   font-size: 1.2rem;
+  cursor: pointer;
   text-transform: uppercase;
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;

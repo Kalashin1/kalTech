@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 
 Vue.config.productionTip = false
+export const bus = new Vue()
 
 Vue.filter('currency', (value) => '$ ' + value)
 
