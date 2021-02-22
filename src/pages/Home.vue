@@ -2,11 +2,10 @@
   <div style="overflow: hidden">
     <HomeLayout>
       <div slot="main">
-        Main
         <TopArticle></TopArticle>
       </div>
       <div slot="sidebar">
-        <Sidebar />
+        <Sidebar :links="links"/>
       </div>
     </HomeLayout>
   </div>
@@ -22,6 +21,32 @@ export default {
     HomeLayout,
     TopArticle,
     Sidebar
+  },
+  data () {
+    return {
+      links: [
+        {
+          title: 'html',
+          links: ['learn html', 'html projects', 'markup questions']
+        },
+        {
+          title: 'css',
+          links: ['learn css', 'css projects', 'style sheet questions']
+        },
+        {
+          title: 'javascript',
+          links: ['learn javascript', 'javascript projects', 'javascript questions']
+        },
+        {
+          title: 'projects',
+          links: ['html', 'css', 'javascript']
+        },
+        {
+          title: 'questions',
+          links: ['html', 'stylesheet', 'javascript']
+        }
+      ]
+    }
   }
 }
 </script>

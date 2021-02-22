@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/Home'
-import Signup from '@/pages/Signup'
-import Login from '@/pages/Login'
 import Blogs from '@/pages/Blogs'
 import AddBlog from '@/pages/AddBlog'
 import Blog from '@/pages/Blog'
+import html from '@/pages/html'
+import css from '@/pages/css'
+import javascript from '@/pages/javascript'
 
 Vue.use(Router)
 
@@ -16,16 +17,6 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
-    },
-    {
-      path: '/signup',
-      name: 'Signup',
-      component: Signup
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: Login
     },
     {
       path: '/blogs',
@@ -41,6 +32,21 @@ export default new Router({
       path: '/add-blog',
       name: 'addBlog',
       component: AddBlog
+    },
+    {
+      path: '/html',
+      name: 'html',
+      component: html
+    },
+    {
+      path: '/css',
+      name: 'css',
+      component: css
+    },
+    {
+      path: '/javascript',
+      name: 'javascript',
+      component: javascript
     }
   ]
 })

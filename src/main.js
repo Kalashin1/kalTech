@@ -4,7 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import VueCodeHighlight from 'vue-code-highlight'
+
 Vue.config.productionTip = false
+Vue.use(VueCodeHighlight)
 export const bus = new Vue()
 
 Vue.filter('currency', (value) => '$ ' + value)

@@ -43,14 +43,15 @@ export default {
         credentials: 'include'
       })
       if (res.ok) {
-        const data = await res.json()
-        if (!data.id) {
-          next('/login')
-          // eslint-disable-next-line
-        }
-        else {
-          next()
-        }
+        // const data = await res.json()
+        // if (!data.id) {
+        //   next('/login')
+        //   // eslint-disable-next-line
+        // }
+        // else {
+        //   next()
+        // }
+        next()
       }
     }
     getUserId()

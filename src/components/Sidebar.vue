@@ -17,33 +17,17 @@ import { bus } from '../main'
 export default {
   data () {
     return {
-      links: [
-        {
-          title: 'html',
-          links: ['learn html', 'html projects', 'markup questions']
-        },
-        {
-          title: 'css',
-          links: ['learn css', 'css projects', 'style sheet questions']
-        },
-        {
-          title: 'javascript',
-          links: ['learn javascript', 'javascript projects', 'javascript questions']
-        },
-        {
-          title: 'projects',
-          links: ['html', 'css', 'javascript']
-        },
-        {
-          title: 'questions',
-          links: ['html', 'stylesheet', 'javascript']
-        }
-      ]
     }
   },
   methods: {
     closeSidebar () {
       bus.$emit('close')
+    }
+  },
+  props: {
+    links: {
+      type: Array,
+      required: true
     }
   }
 }
@@ -67,6 +51,7 @@ export default {
   text-decoration: none;
   transition: all .2s linear;
   display: block;
+  margin-top: .5rem;
   padding: .3rem .2rem;
   color: darkgray;
   font-weight: bold;
@@ -90,6 +75,9 @@ export default {
   }
   .links li a {
     color: white !important
+  }
+  .title{
+    color: #f2f2f2 !important
   }
 }
 </style>

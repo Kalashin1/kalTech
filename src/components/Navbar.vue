@@ -8,9 +8,10 @@
 
       <ul class="links" ref="menu">
         <li><router-link to="/">home</router-link></li>
-        <li><router-link to="/signup">signup</router-link></li>
-        <li><router-link to="/login">login</router-link></li>
-        <li><router-link to="/blogs">Blogs</router-link></li>
+        <li><router-link to="/html">html</router-link></li>
+        <li><router-link to="/css">css</router-link></li>
+        <li><router-link to="/javascript">javascript</router-link></li>
+        <li><router-link to="/blogs">blogs</router-link></li>
       </ul>
 
     </nav>
@@ -100,7 +101,7 @@ export default {
 
 .show{
   display: flex !important;
-  transition: all .4s ease
+  transition: all 3s ease;
 }
 
 @keyframes show{

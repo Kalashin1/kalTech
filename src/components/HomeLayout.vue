@@ -115,4 +115,8 @@ export default {
 .show-leave-active{
   transition: all .2s linear;
 }
+
+.main{
+  display: block !important
+}
 </style>

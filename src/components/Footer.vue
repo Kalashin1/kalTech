@@ -63,6 +63,7 @@ export default {
   }
   .title{
     font-weight: bold;
+    color: #fff;
     text-transform: capitalize;
     margin: 1rem
   }
@@ -76,7 +77,8 @@ export default {
     list-style: none;
   }
   .text{
-    padding: .5rem 1rem
+    padding: .5rem 1rem;
+    color: #fff
   }
   .links{
     grid-gap: 20%
