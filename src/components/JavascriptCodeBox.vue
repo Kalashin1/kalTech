@@ -8,8 +8,8 @@
         </code-highlight>
       </div>
       <div class="text">
-        <h2> Learn how to use client side javascript</h2>
-        <h4>Learm how to use javascript for clientside scripting purposes, add interactivity and slick behaviour with javascript.</h4>
+        <h1> Learn how to use client side javascript</h1>
+        <h3>Learm how to use javascript for clientside scripting purposes, add interactivity and slick behaviour with javascript.</h3>
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@
 
 <script>
 import CodeHighlight from 'vue-code-highlight/src/CodeHighlight.vue'
-import 'vue-code-highlight/themes/prism-solarizedlight.css'
+import 'vue-code-highlight/themes/prism-okaidia.css'
 import 'vue-code-highlight/themes/window.css'
 
 export default {
@@ -30,7 +30,6 @@ export default {
 <style scoped>
 .container{
   width: 100%;
-  display: block;
   padding: .5rem .5rem;
 }
 
@@ -47,12 +46,24 @@ h3, h5, h2, h4{
 .codebox{
   display: grid;
   margin: 3rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 3fr;
+  grid-row: 1fr;
   grid-gap: 5%
 }
 
+@media screen and (max-width: 1200px){
+  .codebox{
+    grid-template-columns: 100% !important;
+  }
+
+  .code{
+    /* transform: translateX(-57px); */
+    max-width: 320px !important
+  }
+}
+
 .code{
-  display: grid;
-  grid-column-start: 1 ;
+  margin: 1rem auto;
+  overflow-x: scroll
 }
 </style>

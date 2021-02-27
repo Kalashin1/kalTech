@@ -30,6 +30,12 @@ export default {
   padding: .5rem .5rem;
 }
 
+@media screen and (max-width: 1030px){
+
+  h1{
+    text-overflow: ellipsis !important;
+  }
+}
 h1{
   margin-bottom: 2rem
 }

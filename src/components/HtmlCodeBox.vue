@@ -8,15 +8,15 @@
       </code-highlight>
     </div>
     <div class="text">
-      <h2> Learn html in a breeze</h2>
-      <h4>Get started with Modern HTML 5 lessons to help you embark on your web development journey. In no time you can already an HTML pro.</h4>
+      <h1> Learn html in a breeze</h1>
+      <h3>Get started with Modern HTML 5 lessons to help you embark on your web development journey. In no time you can already an HTML pro.</h3>
     </div>
   </div>
 </template>
 
 <script>
 import CodeHighlight from 'vue-code-highlight/src/CodeHighlight.vue'
-import 'vue-code-highlight/themes/prism-solarizedlight.css'
+import 'vue-code-highlight/themes/prism-okaidia.css'
 import 'vue-code-highlight/themes/window.css'
 
 export default {
@@ -29,7 +29,6 @@ export default {
 <style scoped>
 .container{
   width: 100%;
-  display: block;
   padding: .5rem .5rem;
 }
 
@@ -49,5 +48,20 @@ h3, h5, h2, h4{
   grid-template-columns: 1fr 3fr;
   grid-row: 1fr;
   grid-gap: 5%
+}
+
+@media screen and (max-width: 1200px){
+  .codebox{
+    grid-template-columns: 100% !important;
+  }
+
+  .code{
+    max-width: 250px !important
+  }
+}
+
+.code{
+  margin: 1rem auto;
+  overflow-x: scroll
 }
 </style>

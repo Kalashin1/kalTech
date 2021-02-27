@@ -6,13 +6,13 @@
         <a class="toggle" @click="toggleMenu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20px" fill="green"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></a>
       </div>
 
-      <ul class="links" ref="menu">
-        <li><router-link to="/">home</router-link></li>
-        <li><router-link to="/html">html</router-link></li>
-        <li><router-link to="/css">css</router-link></li>
-        <li><router-link to="/javascript">javascript</router-link></li>
-        <li><router-link to="/blogs">blogs</router-link></li>
-      </ul>
+        <ul class="links" ref="menu">
+          <li><router-link to="/">home</router-link></li>
+          <li><router-link to="/html">html</router-link></li>
+          <li><router-link to="/css">css</router-link></li>
+          <li><router-link to="/javascript">javascript</router-link></li>
+          <li><router-link to="/blogs">blogs</router-link></li>
+        </ul>
 
     </nav>
   </div>
@@ -20,10 +20,18 @@
 
 <script>
 export default {
+  data () {
+    return {
+      sWidth: 0
+    }
+  },
   methods: {
     toggleMenu: function () {
       this.$refs.menu.classList.toggle('show')
     }
+  },
+  created () {
+    this.sWidth = window.screen.availWidth
   }
 }
 </script>
@@ -65,6 +73,7 @@ export default {
 .links{
   display: flex;
   list-style: none;
+  transition: all linear .2s !important;
   justify-content: flex-end;
 }
 
@@ -112,4 +121,20 @@ export default {
     display: flex !important;
   }
 }
+
+.show-enter{
+  transform: translateY(-600px);
+  opacity: 0
+}
+.show-enter-active{
+  transition: all .2s linear;
+}
+.show-leave-to{
+  opacity: 0;
+  transform: translateY(-600px)
+}
+.show-leave-active{
+  transition: all .2s linear;
+}
+
 </style>

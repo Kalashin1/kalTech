@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/Home'
-import Blogs from '@/pages/Blogs'
-import AddBlog from '@/pages/AddBlog'
-import Blog from '@/pages/Blog'
+import Lesson from '@/pages/Lesson'
 import html from '@/pages/html'
 import css from '@/pages/css'
 import javascript from '@/pages/javascript'
@@ -19,19 +17,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/blogs',
-      name: 'Blogs',
-      component: Blogs
-    },
-    {
-      path: '/blog/:id',
-      name: 'Blog',
-      component: Blog
-    },
-    {
-      path: '/add-blog',
-      name: 'addBlog',
-      component: AddBlog
+      path: '/lesson/:language/:topic',
+      name: 'Lesson',
+      component: Lesson
     },
     {
       path: '/html',

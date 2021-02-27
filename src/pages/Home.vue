@@ -1,5 +1,5 @@
 <template>
-  <div style="overflow: hidden">
+  <div>
     <HomeLayout>
       <div slot="main">
         <TopArticle></TopArticle>
@@ -27,15 +27,15 @@ export default {
       links: [
         {
           title: 'html',
-          links: ['learn html', 'html projects', 'markup questions']
+          links: ['learn', 'projects', 'questions']
         },
         {
           title: 'css',
-          links: ['learn css', 'css projects', 'style sheet questions']
+          links: ['learn', 'projects', 'questions']
         },
         {
           title: 'javascript',
-          links: ['learn javascript', 'javascript projects', 'javascript questions']
+          links: ['learn', 'projects', 'questions']
         },
         {
           title: 'projects',

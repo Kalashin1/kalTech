@@ -1,11 +1,7 @@
 <template>
   <div class="container">
     <div class="codebox">
-       <div class="text">
-           <h2> Learn how to style a webpage</h2>
-            <h4>Learm how to add css to your html files, this course is dedicated to equipping you with information enough to become a css god</h4>
-        </div>
-       <div class="code">
+      <div class="code">
         <code-highlight language="css">
           .foo {
             font-family: sans;
@@ -14,13 +10,17 @@
           }
         </code-highlight>
       </div>
+      <div class="text">
+        <h1> Learn how to style a webpage</h1>
+        <h3>Learm how to add css to your html files, this course is dedicated to equipping you with information enough to become a css god</h3>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import CodeHighlight from 'vue-code-highlight/src/CodeHighlight.vue'
-import 'vue-code-highlight/themes/prism-solarizedlight.css'
+import 'vue-code-highlight/themes/prism-okaidia.css'
 import 'vue-code-highlight/themes/window.css'
 
 export default {
@@ -33,7 +33,6 @@ export default {
 <style scoped>
 .container{
   width: 100%;
-  display: block;
   padding: .5rem .5rem;
 }
 
@@ -48,15 +47,31 @@ h3, h5, h2, h4{
 }
 
 .codebox{
-  display: flex;
-  margin: 3rem 0;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 3%;
-  width: 100%
+  display: grid;
+  margin: 3rem;
+  grid-template-columns: 1fr 3fr;
+  grid-row: 1fr;
+  grid-gap: 5%
 }
 
 .code{
-  display: grid;
-  grid-column-start: 2;
+  margin: 1rem auto;
+  overflow-x: scroll
 }
+
+@media screen and (max-width: 1200px){
+  .codebox{
+    grid-template-columns: 100% !important;
+  }
+
+  .code{
+    max-width: 320px !important;
+  }
+}
+/*
+@media screen and (max-width: 1030px){
+  .codebox{
+    grid-template-columns: 1fr 1fr;
+  }
+} */
 </style>
