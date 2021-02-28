@@ -58,12 +58,10 @@ h3, h5, h2, h4{
 
   .code{
     /* transform: translateX(-57px); */
-    max-width: 320px !important
+    max-width: 320px !important;
+    margin: 1rem auto;
+    overflow-x: scroll
   }
 }
 
-.code{
-  margin: 1rem auto;
-  overflow-x: scroll
-}
 </style>

@@ -50,18 +50,19 @@ h3, h5, h2, h4{
   grid-gap: 5%
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1100px){
   .codebox{
     grid-template-columns: 100% !important;
   }
 
   .code{
-    max-width: 250px !important
+    max-width: 250px !important;
+    margin: 1rem auto;
+    overflow-x: scroll
   }
 }
 
 .code{
-  margin: 1rem auto;
-  overflow-x: scroll
+
 }
 </style>

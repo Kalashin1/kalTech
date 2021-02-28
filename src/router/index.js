@@ -5,6 +5,8 @@ import Lesson from '@/pages/Lesson'
 import html from '@/pages/html'
 import css from '@/pages/css'
 import javascript from '@/pages/javascript'
+import AddLesson from '@/pages/AddLesson'
+import ContactUs from '@/pages/ContactUs'
 
 Vue.use(Router)
 
@@ -35,6 +37,14 @@ export default new Router({
       path: '/javascript',
       name: 'javascript',
       component: javascript
+    },
+    {
+      path: '/add-lesson',
+      component: AddLesson
+    },
+    {
+      path: '/contact',
+      component: ContactUs
     }
   ]
 })
