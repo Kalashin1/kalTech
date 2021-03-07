@@ -1,7 +1,7 @@
 export const html = [
   {
     title: 'html',
-    links: ['intoduction', 'documents', 'head', 'body', 'typography', 'attributes', 'lists', 'links', 'tables', 'forms', 'inputs', 'textarea', 'button', 'image', 'video', 'mp3']
+    links: ['introduction', 'documents', 'head', 'body', 'typography', 'attributes', 'lists', 'links', 'tables', 'forms', 'inputs', 'textarea', 'button', 'image', 'video', 'mp3']
   }
 ]
 

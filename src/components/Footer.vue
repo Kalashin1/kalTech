@@ -9,7 +9,7 @@
         <div v-for="footerLink in footerLinks" :key="footerLink">
           <h3 class="title">{{footerLink.title}}</h3>
           <ul>
-            <li v-for="link in footerLink.links" :key="link"><a href="">{{link}}</a></li>
+            <li v-for="link in footerLink.links" :key="link"><router-link :to="link">{{link}}</router-link></li>
           </ul>
         </div>
       </div>
@@ -25,7 +25,7 @@ export default {
       title: 'KTech',
       about: 'Ea quis adipisicing nostrud dolore anim anim.Est dolor amet voluptate tempor nulla eu dolore anim amet quis pariatur dolor.',
       footerLinks: [
-        {title: 'resources', links: ['why KTech', 'contact us', 'FAQ']},
+        {title: 'resources', links: ['why KTech', 'contact', 'FAQ']},
         {title: 'courses', links: ['html', 'css', 'javascript']}
       ]
     }

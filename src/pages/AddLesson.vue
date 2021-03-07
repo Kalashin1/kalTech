@@ -1,20 +1,20 @@
 <template>
   <div class="container">
-    <form>
+    <form @submit.prevent="submit({topic, body, language})">
       <div class="topic">
-        <input type="text"  placeholder="topic"/>
+        <input type="text" v-model="topic" placeholder="topic"/>
       </div>
       <div class="body-content">
-        <textarea>
+        <textarea v-model="body">
           Your content here
         </textarea>
       </div>
       <div class="select-lang">
-        <select>
-          <option selected>Choose a language</option>
-          <option>html</option>
-          <option>css</option>
-          <option>javascript</option>
+        <select v-model="language">
+          <option selected value="">Choose a language</option>
+          <option value="html">html</option>
+          <option value="css">css</option>
+          <option value="javascript">javascript</option>
         </select>
       </div>
       <div class="submit">
@@ -30,9 +30,20 @@ export default {
     return {
       language: '',
       topic: '',
-      body: {
-        content: '',
-        code: ''
+      body: ''
+    }
+  },
+  methods: {
+    async submit (lesson) {
+      const res = await fetch('http://localhost:3000/' + lesson.language, {
+        body: JSON.stringify(lesson),
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'}
+      })
+
+      if (res.ok) {
+        const data = await res.json()
+        console.log(data, res.status)
       }
     }
   }
@@ -58,6 +69,10 @@ export default {
   outline: 0;
   padding: 0 .5rem;
   font-size: 1.2rem
+}
+
+.body-content textarea {
+  padding: 1rem
 }
 
 .topic input {

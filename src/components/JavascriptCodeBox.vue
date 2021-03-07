@@ -56,6 +56,9 @@ h3, h5, h2, h4{
     grid-template-columns: 100% !important;
   }
 
+}
+
+@media screen and (max-width: 535px){
   .code{
     /* transform: translateX(-57px); */
     max-width: 320px !important;
@@ -63,5 +66,4 @@ h3, h5, h2, h4{
     overflow-x: scroll
   }
 }
-
 </style>
