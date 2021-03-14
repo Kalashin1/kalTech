@@ -4,10 +4,20 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-import VueCodeHighlight from 'vue-code-highlight'
+// atelier-savanna-light
+// brown-paper
+// github-gist
+// atom-one-light
+// codepen-embed
+// tomorrow-night-blue
+
+import hljs from 'highlight.js'
+import 'highlight.js/styles/github.css'
 
 Vue.config.productionTip = false
-Vue.use(VueCodeHighlight)
+
+Vue.use(hljs.vuePlugin)
+
 export const bus = new Vue()
 
 Vue.filter('currency', (value) => '$ ' + value)

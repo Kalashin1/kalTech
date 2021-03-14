@@ -3,22 +3,49 @@
     <h1>Learn the fundamental languages of the web</h1>
     <h3>Welcome to KTech, here we are dedicated to ensuring that you have access to materials that we help you begin your web development career, we have beginner courses on the fundamental languages of the web; HTML, CSS and JavaScript all for free.</h3>
 
-    <Codebox></Codebox>
-    <CssCodeBox></CssCodeBox>
-    <javascript-code-box></javascript-code-box>
+    <CodeBox lang="xml" :code="html">
+      <slot>
+        <h1> Learn html in a breeze</h1>
+        <h3>Get started with Modern HTML 5 lessons to help you embark on your web development journey. In no time you can already an HTML pro.</h3>
+      </slot>
+    </CodeBox>
+
+    <CodeBox lang="css" :code="css">
+      <slot>
+        <h1> Learn how to style a webpage</h1>
+        <h3>Learm how to add css to your html files, this course is dedicated to equipping you with information enough to become a css god</h3>
+      </slot>
+    </CodeBox>
+
+    <CodeBox lang="javascript" :code="js">
+      <slot>
+        <h1> Learn how to use client side javascript</h1>
+        <h3>Learm how to use javascript for clientside scripting purposes, add interactivity and slick behaviour with javascript.</h3>
+      </slot>
+    </CodeBox>
   </div>
 </template>
 
 <script>
-import Codebox from '@/components/HtmlCodeBox'
-import CssCodeBox from '@/components/CssCodeBox'
-import JavascriptCodeBox from '@/components/JavascriptCodeBox'
+import CodeBox from '@/components/CodeBox'
 
 export default {
   components: {
-    Codebox,
-    CssCodeBox,
-    JavascriptCodeBox
+    CodeBox
+  },
+  data () {
+    return {
+      html: `<head>
+  <title>trial</title>
+</head>`,
+      css: `.foo {
+            font-family: sans;
+            color: red;
+            border: 1px solid green
+          }`,
+      js: `const foo = 'jon doe'
+console.log(foo)`
+    }
   }
 }
 </script>

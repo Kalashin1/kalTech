@@ -5,11 +5,11 @@
       "language": "html",
       "topic": "introduction",
       "body": "some text",
-      "code": ["<!DOCTYPE html>\r<html>\r <head>\r  <title>Introduction to html</title>\r<head>\r<body>\r <h1>Hyper Text Markup Language</h1>\r</body>\r</html>"]
+      "code": ["<!DOCTYPE html>\r<html>\r <head>\r  <title>Introduction to html</title>\r<head>\r<body>\r <h1>Hyper Text Markup Language</h1>\r</body>\r</html>", "console.log('hello')"]
     },
     {
       "topic": "tables",
-      "body": "bjkdjkvf ",
+      "body": "# bjkdjkvf\n ### this shit is messed\n __pre__\n```javascript\nconst name = 1\nconsole.log(name)\n```\n",
       "language": "html",
       "id": 2
     },
