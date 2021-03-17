@@ -6,7 +6,7 @@
         <h5 class="text">{{about}}</h5>
       </div>
       <div class="links">
-        <div v-for="footerLink in footerLinks" :key="footerLink">
+        <div v-for="footerLink in footerLinks" :key="footerLink.title">
           <h3 class="title">{{footerLink.title}}</h3>
           <ul>
             <li v-for="link in footerLink.links" :key="link"><router-link :to="'/'+link">{{link}}</router-link></li>

@@ -4,12 +4,16 @@
     <h3 class="topic">{{topic}}</h3>
     <div ref="lesson"></div>
     <div class="nav-buttons" v-if="lesson">
-      <a href="" @click.prevent="$router.push(`/lesson/${language}/${lesson[0].next}`);">{{lesson[0].next}}</a>
+      <a href="" @click.prevent="$router.push(`/lesson/${language}/${lesson.prev}`);">{{lesson.prev}}</a>
+      <a href="" @click.prevent="$router.push(`/lesson/${language}/${lesson.next}`);">{{lesson.next}}</a>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+import { types } from '../store/Mutations'
+
 const hljs = require('highlight.js')
 const marked = require('marked')
 
@@ -18,45 +22,51 @@ const renderer = {
     return `<pre><code class="hljs ${language}">${hljs.highlight(language, code).value}</code></pre>`
   }
 }
+
 marked.use({ renderer })
 
 export default {
   data () {
     return {
       lesson: '',
-      state: this.$store.state,
       language: this.$route.params.language,
       topic: this.$route.params.topic
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'getLesson'
+    ]),
+    store () {
+      return this.$store
     }
   },
   methods: {
     appendBlog (html) {
       this.$refs.lesson.innerHTML = html
-    }
+    },
+    ...mapActions([
+      types.html,
+      types.css,
+      types.javascript
+    ])
   },
-  async mounted () {
-    const res = await fetch(`http://localhost:3000/${this.language}?topic=${this.topic}`)
-    if (res.ok) {
-      this.lesson = await res.json()
+  mounted () {
+    this.SET_HTML().then(() => console.log('gotten html'))
 
-      this.lesson[0].body = marked(this.lesson[0].body)
+    this.SET_CSS().then(() => console.log('gotten css'))
 
-      this.appendBlog(this.lesson[0].body)
-    }
+    this.SET_JAVASCRIPT().then(() => {
+      this.lesson = this.getLesson(this.language, this.topic)
+      this.appendBlog(marked(this.lesson.body))
+    })
   },
   watch: {
-    async $route (to, from) {
+    $route (to, from) {
       this.language = to.params.language
       this.topic = to.params.topic
-      console.log(to)
-      const res = await fetch(`http://localhost:3000/${this.language}?topic=${this.topic}`)
-      if (res.ok) {
-        this.lesson = await res.json()
-
-        this.lesson[0].body = marked(this.lesson[0].body)
-
-        this.appendBlog(this.lesson[0].body)
-      }
+      this.lesson = this.getLesson(this.language, this.topic)
+      this.appendBlog(marked(this.lesson.body))
     }
   }
 }
@@ -94,5 +104,13 @@ p{
   display: flex;
   justify-content: space-between;
   align-content: center
+}
+
+.nav-buttons a{
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 1rem 0;
 }
 </style>

@@ -6,15 +6,12 @@ export const types = {
 
 export let mutations = {
   SET_HTML (state, payload) {
-    console.log(payload)
-    state.HTML = [...payload]
+    state.html = [...payload]
   },
   SET_CSS (state, payload) {
-    console.log(payload)
-    state.CSS = [...payload]
+    state.css = [...payload]
   },
   SET_JAVASCRIPT (state, payload) {
-    console.log(payload)
     state.javascript = [...payload]
   }
 }

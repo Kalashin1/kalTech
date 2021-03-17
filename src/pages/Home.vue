@@ -8,9 +8,6 @@
         <Sidebar :links="links"/>
       </div>
     </HomeLayout>
-    <button @click.prevent="getStoreHTML()">get data from store</button>
-    <button @click.prevent="getStoreCSS()">get CSS data from store</button>
-    <button @click.prevent="getStoreJavascript()">get js data from store</button>
   </div>
 </template>
 
@@ -64,19 +61,14 @@ export default {
       types.html,
       types.css,
       types.javascript
-    ]),
-    getStoreHTML () {
-      console.log(this.store.state.HTML)
-      this.SET_HTML().then(() => console.log(this.store.state.HTML, 'hello'))
-    },
-    getStoreCSS () {
-      console.log(this.store.state.CSS)
-      this.SET_CSS().then(() => console.log(this.store.state.CSS))
-    },
-    getStoreJavascript () {
-      console.log(this.store.state.javascript)
-      this.SET_JAVASCRIPT().then(() => console.log(this.store.state.javascript))
-    }
+    ])
+  },
+  mounted () {
+    this.SET_HTML().then(() => console.log('gotten html'))
+
+    this.SET_CSS().then(() => console.log('gotten css'))
+
+    this.SET_JAVASCRIPT().then(() => console.log('gotten javascript'))
   }
 }
 </script>
