@@ -1,14 +1,11 @@
 <template>
-  <div class="container">
+  <div class="container"                                                       >
     <h1 class="language">{{language}}</h1>
     <h3 class="topic">{{topic}}</h3>
     <div ref="lesson"></div>
-    <!-- <div class="code">
-      <highlightjs autodetect :code="lesson[0].code[0]" />
+    <div class="nav-buttons" v-if="lesson">
+      <a href="" @click.prevent="$router.push(`/lesson/${language}/${lesson[0].next}`);">{{lesson[0].next}}</a>
     </div>
-    <div class="code">
-      <highlightjs autodetect :code="lesson[0].code[1]" />
-    </div> -->
   </div>
 </template>
 
@@ -27,30 +24,39 @@ export default {
   data () {
     return {
       lesson: '',
+      state: this.$store.state,
       language: this.$route.params.language,
-      topic: this.$route.params.topic,
-      md: `# Marked **bold**
-      __<head>
-        <meta name="viewport" content="width=device-with" />
-      </head>__
-      `
+      topic: this.$route.params.topic
     }
   },
   methods: {
     appendBlog (html) {
       this.$refs.lesson.innerHTML = html
-      console.log(this.$refs.lesson)
     }
   },
   async mounted () {
     const res = await fetch(`http://localhost:3000/${this.language}?topic=${this.topic}`)
     if (res.ok) {
       this.lesson = await res.json()
-      console.log(this.lesson[0].body)
+
       this.lesson[0].body = marked(this.lesson[0].body)
-      console.log(marked(this.lesson[0].body))
-      console.log(this.md)
+
       this.appendBlog(this.lesson[0].body)
+    }
+  },
+  watch: {
+    async $route (to, from) {
+      this.language = to.params.language
+      this.topic = to.params.topic
+      console.log(to)
+      const res = await fetch(`http://localhost:3000/${this.language}?topic=${this.topic}`)
+      if (res.ok) {
+        this.lesson = await res.json()
+
+        this.lesson[0].body = marked(this.lesson[0].body)
+
+        this.appendBlog(this.lesson[0].body)
+      }
     }
   }
 }
@@ -71,9 +77,9 @@ export default {
   overflow-x: scroll;
 }
 
-/* .code::-webkit-scrollbar{
-  display: none
-} */
+p{
+  margin: .5rem 0
+}
 
 @media screen and (max-width: 300px){
   .code{
@@ -82,5 +88,11 @@ export default {
 }
 .topic{
   margin-bottom: 1rem
+}
+
+.nav-buttons{
+  display: flex;
+  justify-content: space-between;
+  align-content: center
 }
 </style>

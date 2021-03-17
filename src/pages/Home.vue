@@ -8,6 +8,9 @@
         <Sidebar :links="links"/>
       </div>
     </HomeLayout>
+    <button @click.prevent="getStoreHTML()">get data from store</button>
+    <button @click.prevent="getStoreCSS()">get CSS data from store</button>
+    <button @click.prevent="getStoreJavascript()">get js data from store</button>
   </div>
 </template>
 
@@ -15,6 +18,9 @@
 import HomeLayout from '../components/HomeLayout'
 import TopArticle from '@/components/TopArticle'
 import Sidebar from '@/components/Sidebar'
+
+import { mapActions } from 'vuex'
+import { types } from '../store/Mutations'
 
 export default {
   components: {
@@ -46,6 +52,30 @@ export default {
           links: ['html', 'stylesheet', 'javascript']
         }
       ]
+    }
+  },
+  computed: {
+    store () {
+      return this.$store
+    }
+  },
+  methods: {
+    ...mapActions([
+      types.html,
+      types.css,
+      types.javascript
+    ]),
+    getStoreHTML () {
+      console.log(this.store.state.HTML)
+      this.SET_HTML().then(() => console.log(this.store.state.HTML, 'hello'))
+    },
+    getStoreCSS () {
+      console.log(this.store.state.CSS)
+      this.SET_CSS().then(() => console.log(this.store.state.CSS))
+    },
+    getStoreJavascript () {
+      console.log(this.store.state.javascript)
+      this.SET_JAVASCRIPT().then(() => console.log(this.store.state.javascript))
     }
   }
 }

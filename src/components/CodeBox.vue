@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <div class="codebox">
-      <div class="code">
-        <highlightjs :language="lang" :code="code" />
-      </div>
       <div class="text">
         <slot></slot>
+      </div>
+      <div class="code">
+        <highlightjs :language="lang" :code="code" />
       </div>
     </div>
   </div>

@@ -3,10 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store/Store'
 
 // atelier-savanna-light
 // brown-paper
 // github-gist
+// github
 // atom-one-light
 // codepen-embed
 // tomorrow-night-blue
@@ -26,6 +28,7 @@ Vue.filter('currency', (value) => '$ ' + value)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

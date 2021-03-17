@@ -118,7 +118,4 @@ export default {
   transition: all .2s linear;
 }
 
-.main{
-  /* display: block !important */
-}
 </style>

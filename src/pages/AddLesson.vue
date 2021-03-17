@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <form @submit.prevent="submit({topic, body, language})">
+    <form @submit.prevent="submit({topic, body, language, prev, next})">
       <div class="topic">
         <input type="text" v-model="topic" placeholder="topic"/>
       </div>
@@ -8,6 +8,10 @@
         <textarea v-model="body">
           Your content here
         </textarea>
+      </div>
+      <div class="links">
+        <input type="text" placeholder="next topic" v-model="prev"/>
+        <input type="text" placeholder="previous topic" v-model="next" />
       </div>
       <div class="select-lang">
         <select v-model="language">
@@ -30,7 +34,9 @@ export default {
     return {
       language: '',
       topic: '',
-      body: ''
+      body: '',
+      prev: '',
+      next: ''
     }
   },
   methods: {
@@ -44,6 +50,7 @@ export default {
       if (res.ok) {
         const data = await res.json()
         console.log(data, res.status)
+        this.$router.push(`/lesson/${this.language}/${this.topic}`)
       }
     }
   }
@@ -61,7 +68,7 @@ export default {
   width: 100%;
 }
 
-.body-content textarea, .topic input{
+.body-content textarea, .topic input, .links input{
   width: 100%;
   height: 100vh;
   background: #f4f4ef;
@@ -72,13 +79,18 @@ export default {
 }
 
 .body-content textarea {
-  padding: 1rem
+  padding: .5rem
 }
 
 .topic input {
   max-height: 150px;
   font-size: 4rem;
   border-bottom: 2px solid gray
+}
+
+.links input {
+  max-height: 80px;
+  margin: .5rem 0;
 }
 
 .select-lang select {
