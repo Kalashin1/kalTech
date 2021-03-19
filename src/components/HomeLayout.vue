@@ -6,6 +6,9 @@
     <div class="container">
       <div class="main">
         <slot name="main"></slot>
+        <a class="scroll-to-top" @click="scrollToTop()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="48" height="48" viewBox="0 0 48 48"><path d="M20.17 31.17L23 34l10-10-10-10-2.83 2.83L25.34 22H6v4h19.34l-5.17 5.17zM38 6H10c-2.21 0-4 1.79-4 4v8h4v-8h28v28H10v-8H6v8c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V10c0-2.21-1.79-4-4-4z"/></svg>
+        </a>
       </div>
       <transition name="show">
         <div class="sidebar" ref="sidebar" v-if="sidebar" >
@@ -31,13 +34,15 @@ export default {
     },
     closeSidebar () {
       this.sidebar = false
+    },
+    scrollToTop () {
+      window.scrollTo({top: 0, behavior: 'smooth'})
     }
   },
   created () {
     if (window.screen.width < 670) {
       this.closeSidebar()
     }
-    console.log(window.screen.width)
     bus.$on('close', () => this.closeSidebar())
   }
 }
@@ -56,7 +61,7 @@ export default {
     grid-template-columns: 100% !important;
     padding: .5rem .3rem;
   }
-  .toggle{
+  .toggle, .scroll-to-top{
     display: grid !important;
     align-content: center;
     margin: .5rem;
@@ -88,17 +93,21 @@ export default {
   border-left: 1px solid #f5f5f5;
 }
 
-.toggle{
+.toggle, .scroll-to-top{
   position: fixed;
-  bottom: 5rem; left: 20rem;;
+  bottom: 5rem; right: 8%;
   padding: .5rem;
   z-index: 20;
   display: none;
   cursor: pointer;
-  width: 10vw;
-  height: 10vw;
+  width: 12vw;
+  height: 12vw;
   background: green;
   border-radius: 50%
+}
+
+.scroll-to-top {
+  bottom: 12rem
 }
 
 /* Teransition classes */

@@ -54,7 +54,7 @@ console.log(foo)`
 .container{
   width: 100%;
   display: block;
-  padding: .5rem .5rem;
+  padding: .5rem .3rem;
 }
 
 @media screen and (max-width: 1030px){

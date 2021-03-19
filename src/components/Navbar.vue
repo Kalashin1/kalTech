@@ -66,6 +66,7 @@ export default {
   cursor: pointer;
   text-transform: uppercase;
   grid-template-columns: repeat(2, 1fr);
+  position: sticky;
   justify-content: space-between;
   align-items: center
 }

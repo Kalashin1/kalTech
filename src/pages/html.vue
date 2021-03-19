@@ -3,7 +3,6 @@
     <HomeLayout>
       <div slot="main">
         html
-        {{ language }}
       </div>
       <div slot="sidebar">
        <Sidebar :links="links"></Sidebar>

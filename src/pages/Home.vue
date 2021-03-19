@@ -30,24 +30,24 @@ export default {
       links: [
         {
           title: 'html',
-          links: ['learn', 'projects', 'questions']
+          links: ['introduction', 'forms', 'media']
         },
         {
           title: 'css',
-          links: ['learn', 'projects', 'questions']
+          links: ['introduction', 'layouts', 'animations']
         },
         {
           title: 'javascript',
-          links: ['learn', 'projects', 'questions']
-        },
-        {
-          title: 'projects',
-          links: ['html', 'css', 'javascript']
-        },
-        {
-          title: 'questions',
-          links: ['html', 'stylesheet', 'javascript']
+          links: ['introduction', 'DOM', 'ajax']
         }
+        // {
+        //   title: 'projects',
+        //   links: ['html', 'css', 'javascript']
+        // },
+        // {
+        //   title: 'questions',
+        //   links: ['html', 'stylesheet', 'javascript']
+        // }
       ]
     }
   },

@@ -48,6 +48,7 @@ export default {
 
 .container{
   padding: 1rem .5rem;
+  display: fixed;
   scrollbar-width: none;
 }
 .title{
